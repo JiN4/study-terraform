@@ -63,7 +63,8 @@ data "aws_iam_policy_document" "alb_log" {
   }
 }
 
+# S3バケットの強制削除
 resource "aws_s3_bucket" "force_destroy" {
   bucket        = "force-destroy-pragmatic-terraform"
-  force_destroy = true
+  force_destroy = true # エラーなしで破棄できるようになる
 }
